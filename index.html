@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Rock Paper Scissors Game</title>
+</head>
+<body>
+  <p> You have chosen <span id="choices"></span></p>
+  <p> The computer has chosen <span id="computerPick"></span></p>
+  <p id="display"></p>
+
+<script type="text/javascript">
+function playRound(playerSelection, computerSelection) {
+	//my code here
+if (playerSelection == "rock" && computerSelection == "rock") {
+	return ("it's a tie");
+} else if (playerSelection == "rock"  && computerSelection == "paper") {
+	return ("the computer has won");
+}  else if (playerSelection == "rock"  && computerSelection == "scissors") {
+	return ("you have won");
+}  else if (playerSelection == "paper" && computerSelection == "rock") {
+	return ("you have won");
+} else if (playerSelection == "paper"  && computerSelection == "paper") {
+	return ("it's a tie");
+}  else if (playerSelection == "paper"  && computerSelection == "scissors") {
+	return ("the computer has won");
+}   else if (playerSelection == "scissors" && computerSelection == "rock") {
+	return ("you have lost");
+} else if (playerSelection == "scissors"  && computerSelection == "paper") {
+	return ("you have won");
+}  else if (playerSelection == "scissors"  && computerSelection == "scissors") {
+	return ("it's a tie");
+}  
+
+else {
+	return ("Oh no!");
+}
+};
+
+	let playerSelection = prompt("Make your choice!");
+	let options = ["rock", "paper", "scissors"]
+	let computerSelection = options[Math.floor(Math.random() * options.length)];
+console.log(playRound(playerSelection, computerSelection));
+
+document.querySelector('#choices').innerHTML = (playerSelection);
+document.querySelector('#computerPick').innerHTML = (computerSelection);
+document.querySelector('#display').innerHTML = (playRound(playerSelection, computerSelection));
+
+//document.querySelector('#currentScore').innerHTML = (score);
+
+
+console.log(computerSelection);
+console.log(playerSelection);
+
+</script>
+
+</body>
+</html>
